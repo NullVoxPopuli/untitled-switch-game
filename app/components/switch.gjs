@@ -3,7 +3,9 @@ import { action } from '@ember/object';
 import { helper } from '@ember/component/helper';
 import { hbs } from 'ember-template-imports';
 
-export class LightSwitch {
+export const switches = helper(([count]) => new Array(count).map(() => new LightSwitch()));
+
+class LightSwitch {
   @tracked on = Boolean(Math.round(Math.random()));
 
   @action

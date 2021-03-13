@@ -1,17 +1,9 @@
 import Component from '@glimmer/component';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { hbs } from 'ember-template-imports';
 
 export default class Config extends Component {
-  <template>
-    Switches: {{this.numSwitches}}
-    <button type="button" {{on "click" this.addSwitch}}>
-      Add Switch
-    </button>
-    <button type="button" {{on "click" this.removeSwitch}}>
-      Remove Switch
-    </button>
-  </template>
-
   @service router;
 
   get numSwitches() {
@@ -34,4 +26,13 @@ export default class Config extends Component {
     });
   }
 
+  static template = hbs`
+    Switches: {{this.numSwitches}}
+    <button type="button" {{on "click" this.addSwitch}}>
+      Add Switch
+    </button>
+    <button type="button" {{on "click" this.removeSwitch}}>
+      Remove Switch
+    </button>
+  `;
 }
