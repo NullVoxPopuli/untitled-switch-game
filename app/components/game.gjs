@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked, cached } from '@glimmer/tracking';
-import Switch, { LightSwitch } from './switch';
+import { Switch, LightSwitch } from './switch';
 import Config from './config';
 
 export default class GameComponent extends Component {

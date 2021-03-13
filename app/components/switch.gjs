@@ -1,9 +1,9 @@
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { hbs } from 'ember-template-imports';
 import { helper } from '@ember/component/helper';
+import { hbs } from 'ember-template-imports';
 
-export class Switch {
+export class LightSwitch {
   @tracked on = Boolean(Math.round(Math.random()));
 
   @action
@@ -14,7 +14,7 @@ export class Switch {
 
 const inputId = helper(() => (Math.random() * 0xfffff * 1000000).toString(16).split('.')[0]);
 
-export default hbs`
+export const Switch = hbs`
   {{#let (inputId) as |id|}}
     <input
       {{on 'change' @onClick}}
