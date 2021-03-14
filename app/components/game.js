@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked, cached } from '@glimmer/tracking';
 import { hbs } from 'ember-template-imports';
+import { fn } from '@ember/helper';
 
 import { Switch, switches, LightSwitch } from './switch';
 import Config from './config';
