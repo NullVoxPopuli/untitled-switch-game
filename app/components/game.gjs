@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked, cached } from '@glimmer/tracking';
-import { hbs } from 'ember-template-imports';
 import { fn } from '@ember/helper';
 
 import { Switch, switches, LightSwitch } from './switch';
@@ -20,7 +19,7 @@ export default class GameComponent extends Component {
     return this.isOn ? 'On' : 'Off';
   }
 
-  static template = hbs`
+  <template>
     Light: {{this.light}}
     <hr>
 
@@ -31,5 +30,5 @@ export default class GameComponent extends Component {
     <hr>
 
     <Config />
-  `;
+  </template>
 }
